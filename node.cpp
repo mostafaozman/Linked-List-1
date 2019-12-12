@@ -1,26 +1,27 @@
 #include <iostream>
 #include "node.h"
+#include "student.h"
 
-Node::Node()
+Node::Node(Student* addStudent)
 {
-  value = 0 ;
+  student = addStudent; 
   next = NULL;
 }
 
 Node::~Node()
 {
-  delete &value;
+  delete &student;
   next  = NULL; 
 }
 
-void Node::setValue(int newVal)
+Student* Node::getStudent()
 {
-  value = newVal; 
+  return student; 
 }
 
-int Node::getValue()
+void Node::setStudent(Student* addStudent)
 {
-  return value;
+  student = addStudent; 
 }
 
 void Node::setNext(Node* newnext)
